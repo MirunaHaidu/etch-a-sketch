@@ -1,6 +1,5 @@
 # etch-a-sketch
 
-Etch-a-Sketch
 Etch-a-Sketch is a web-based drawing application that allows users to create art on a grid. Choose your color, draw, erase, or even let the randomness inspire you with the random mode.
 
 Check out the live demo [here](https://mirunahaidu.github.io/etch-a-sketch/).
