@@ -58,6 +58,8 @@ button{
     border: 1px solid #9b9b7a;
     background-color: #9b9b7a;
     border-radius: 5px;
+    color: antiquewhite;
+    font-weight: bold;
 }
 
 button.active{

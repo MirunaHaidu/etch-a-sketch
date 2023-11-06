@@ -23,13 +23,15 @@ const colorPicker = document.getElementById('colorPicker');
 const colorBtn = document.getElementById('colorBtn')
 const eraserBtn = document.getElementById('eraserBtn');
 const clearBtn = document.getElementById('clearBtn');
+const randomBtn = document.getElementById('randomBtn');
 const sizeValue = document.getElementById('sizeValue');
 const sizeSlider = document.getElementById('sizeSlider');
 const gridContainer = document.getElementById('gridContainer');
 
 colorPicker.oninput = (e) => setCurrentColor(e.target.value);
 colorBtn.onclick = () => setCurrentMode('color');
-eraserBtn.onclick = () => setCurrentMode('eraser')
+eraserBtn.onclick = () => setCurrentMode('eraser');
+randomBtn.onclick = () => setCurrentMode('random');
 clearBtn.onclick = () => reloadGrid();
 sizeSlider.onmousemove = (e) => updateSizeValue(sizeSlider.value)
 sizeSlider.onchange = (e) => changeSize(sizeSlider.value);
@@ -78,20 +80,30 @@ function changeSize(value) {
         e.target.style.backgroundColor = currentColor;
     } else if(currentMode === 'eraser'){
         e.target.style.backgroundColor = '#fbf1ea'
+    } else if(currentMode === 'random'){
+        const randomR = Math.floor(Math.random()*256);
+        const randomG = Math.floor(Math.random()*256);
+        const randomB = Math.floor(Math.random()*256);
+        const randomColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+        e.target.style.backgroundColor = randomColor;
     }
   }
 
   function activateButton(newMode) {
     if (currentMode === 'color') {
-      colorBtn.classList.remove('active')
+      colorBtn.classList.remove('active');
     } else if (currentMode === 'eraser') {
-      eraserBtn.classList.remove('active')
+      eraserBtn.classList.remove('active');
+    } else if(currentMode === 'random'){
+    randomBtn.classList.remove('active');
     }
   
     if (newMode === 'color') {
-      colorBtn.classList.add('active')
+      colorBtn.classList.add('active');
     } else if (newMode === 'eraser') {
-      eraserBtn.classList.add('active')
+      eraserBtn.classList.add('active');
+    } else if(newMode === 'random'){
+        randomBtn.classList.add('active');
     }
   }
 
