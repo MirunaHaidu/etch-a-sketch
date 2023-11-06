@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    
+}
+
+
+body {
+    background-color: #ffcc84;
+}
+
+.grid-container {
+    display: grid;
+    width: 500px;
+    height: 500px;
+    background-color: #fbf1ea;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.grid-item {
+    transition: background-color 0.3s ease-in-out;
+    cursor: default;
+    user-select: none;
+}
+
+
+.header-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header-text{
+    font-size: 100px;
+    padding: 30px;
+    font-family: 'Cabin Sketch';
+}
+
+.main-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    max-width: 800px; 
+    margin: auto; 
+}
+
+.settings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:30px;
+    width:200px;
+}
+
+button{
+    padding: 10px 20px;
+    border: 1px solid #9b9b7a;
+    background-color: #9b9b7a;
+    border-radius: 5px;
+}
+
+button.active{
+    background-color: #797d62;
+
+}
+
+button,
+input[type='color'] {
+  transition: transform 0.1s ease-in-out;
+}
+
+button:hover,
+input[type='color']:hover {
+  transform: scale(1.05);
+}
+
+input[type='color']:active {
+  transition: transform 0.05s ease-in-out;
+  transform: scale(1);
+}
+
+input[type='color'] {
+  -webkit-appearance: none;
+  width: 80px;
+  height: 80px;
+  border: none;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+    padding: 0;
+    background-color: #ffcc84;
+  }
+  
+  input[type='color']::-webkit-color-swatch {
+    border: none;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+  }
+
+  #sizeSlider{
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
